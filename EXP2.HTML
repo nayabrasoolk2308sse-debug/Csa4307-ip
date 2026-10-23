@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="experiment2.css">
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="myForm">
+        <label>Email:</label>
+        <input type="email" id="email"
+               placeholder="Enter email" required>
+        <p id="emailError"></p>
+
+        <label>Phone Number:</label>
+        <input type="tel" id="phone"
+               placeholder="10-digit phone number"
+               maxlength="10" required>
+        <p id="phoneError"></p>
+
+        <button type="submit">Register</button>
+        <p id="result"></p>
+    </form>
+
+    <script>
+        const form = document.getElementById("myForm");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+
+        function validateEmail() {
+            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            document.getElementById("emailError").textContent =
+                pattern.test(email.value)
+                ? ""
+                : "Enter a valid email address";
+
+            return pattern.test(email.value);
+        }
+
+        function validatePhone() {
+            const pattern = /^[6-9]\d{9}$/;
+
+            document.getElementById("phoneError").textContent =
+                pattern.test(phone.value)
+                ? ""
+                : "Enter a valid 10-digit Indian mobile number";
+
+            return pattern.test(phone.value);
+        }
+
+        email.addEventListener("input", validateEmail);
+        phone.addEventListener("input", validatePhone);
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (validateEmail() && validatePhone()) {
+                document.getElementById("result").textContent =
+                    "Registration successful!";
+            } else {
+                document.getElementById("result").textContent =
+                    "Please correct the errors.";
+            }
+        });
+    </script>
+
+</body>
+</html>
