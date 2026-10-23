@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="experiment1.css">
+</head>
+<body>
+
+    <header>
+        <h1>Retail Store</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Welcome to Our Store</h2>
+            <p>Find the best products at affordable prices.</p>
+        </section>
+
+        <section>
+            <h2>Our Products</h2>
+            <p>Clothing, Electronics and Accessories.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright 2026 Retail Store</p>
+    </footer>
+
+</body>
+</html>
